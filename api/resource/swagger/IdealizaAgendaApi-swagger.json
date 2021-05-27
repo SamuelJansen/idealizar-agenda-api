@@ -1,0 +1,395 @@
+{
+    "swagger": "2.0",
+    "paths": {
+        "/agenda/ai": {
+            "get": {
+                "parameters": [],
+                "tags": [
+                    "AgendaAi"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "$ref": "#/definitions/AgendaResponseDto"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/agenda": {
+            "post": {
+                "parameters": [
+                    {
+                        "name": "body",
+                        "type": "object",
+                        "in": "body",
+                        "required": true,
+                        "description": null,
+                        "schema": {
+                            "$ref": "#/definitions/AgendaRequestDto"
+                        }
+                    }
+                ],
+                "tags": [
+                    "Agenda"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/AgendaResponseDto"
+                        }
+                    }
+                }
+            }
+        },
+        "/agenda/batch/{fromDate}/{toDate}": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "fromDate",
+                        "type": "string",
+                        "in": "path",
+                        "required": true,
+                        "description": null
+                    },
+                    {
+                        "name": "toDate",
+                        "type": "string",
+                        "in": "path",
+                        "required": true,
+                        "description": null
+                    }
+                ],
+                "tags": [
+                    "Agenda"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "$ref": "#/definitions/AgendaResponseDto"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/agenda/batch": {
+            "post": {
+                "parameters": [
+                    {
+                        "name": "body",
+                        "type": "object",
+                        "in": "body",
+                        "required": true,
+                        "description": null,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "$ref": "#/definitions/AgendaRequestDto"
+                            }
+                        }
+                    }
+                ],
+                "tags": [
+                    "Agenda"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "$ref": "#/definitions/AgendaResponseDto"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/agenda/incomming": {
+            "get": {
+                "parameters": [],
+                "tags": [
+                    "Agenda"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "$ref": "#/definitions/AgendaResponseDto"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/agenda/present": {
+            "get": {
+                "parameters": [],
+                "tags": [
+                    "Agenda"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/AgendaResponseDto"
+                        }
+                    }
+                }
+            }
+        },
+        "/actuator/health": {
+            "get": {
+                "parameters": [],
+                "tags": [
+                    "HealthCheck"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/ActuatorHealthResponseDto"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "AgendaResponseDto": {
+            "type": "object",
+            "properties": {
+                "beginAtDate": {
+                    "type": null,
+                    "example": null
+                },
+                "beginAtTime": {
+                    "type": null,
+                    "example": null
+                },
+                "boss": {
+                    "type": null,
+                    "example": null
+                },
+                "endAtDate": {
+                    "type": null,
+                    "example": null
+                },
+                "endAtTime": {
+                    "type": null,
+                    "example": null
+                },
+                "hoster": {
+                    "type": null,
+                    "example": null
+                },
+                "id": {
+                    "type": null,
+                    "example": null
+                },
+                "notes": {
+                    "type": null,
+                    "example": null
+                },
+                "scope": {
+                    "type": null,
+                    "example": null
+                },
+                "status": {
+                    "type": null,
+                    "example": null
+                },
+                "type": {
+                    "type": null,
+                    "example": null
+                },
+                "url": {
+                    "type": null,
+                    "example": null
+                }
+            },
+            "required": [
+                "beginAtDate",
+                "beginAtTime",
+                "boss",
+                "endAtDate",
+                "endAtTime",
+                "hoster",
+                "id",
+                "notes",
+                "scope",
+                "status",
+                "type",
+                "url"
+            ]
+        },
+        "AgendaRequestDto": {
+            "type": "object",
+            "properties": {
+                "beginAtDate": {
+                    "type": "object",
+                    "example": null
+                },
+                "beginAtTime": {
+                    "type": "object",
+                    "example": null
+                },
+                "boss": {
+                    "type": "object",
+                    "example": null
+                },
+                "endAtDate": {
+                    "type": "object",
+                    "example": null
+                },
+                "endAtTime": {
+                    "type": "object",
+                    "example": null
+                },
+                "hoster": {
+                    "type": "object",
+                    "example": null
+                },
+                "notes": {
+                    "type": "object",
+                    "example": null
+                },
+                "scope": {
+                    "type": "object",
+                    "example": null
+                },
+                "status": {
+                    "type": "object",
+                    "example": null
+                },
+                "type": {
+                    "type": "object",
+                    "example": null
+                },
+                "url": {
+                    "type": "object",
+                    "example": null
+                }
+            },
+            "required": [
+                "beginAtDate",
+                "beginAtTime",
+                "boss",
+                "endAtDate",
+                "endAtTime",
+                "hoster",
+                "notes",
+                "scope",
+                "status",
+                "type",
+                "url"
+            ]
+        },
+        "ActuatorHealthResponseDto": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "object",
+                    "example": null
+                }
+            },
+            "required": [
+                "status"
+            ]
+        }
+    },
+    "tags": [
+        {
+            "name": "AgendaAi",
+            "description": "AgendaAi controller",
+            "externalDocs": null
+        },
+        {
+            "name": "Agenda",
+            "description": "Agenda controller. Agenda controller. Agenda controller. Agenda controller",
+            "externalDocs": null
+        },
+        {
+            "name": "HealthCheck",
+            "description": "HealthCheck controller",
+            "externalDocs": null
+        }
+    ],
+    "host": "localhost:5110",
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/idealizar-agenda-api",
+    "info": {
+        "title": {},
+        "description": "Idealizar agenda api",
+        "version": "0.0.1",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "Samuel Jansen",
+            "email": "samuel.jansenn@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0 / MIT License",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    }
+}
